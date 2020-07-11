@@ -7,7 +7,7 @@ struct Node {
 };
 
 
-void printNodeLast (struct Node * head, int pos) {
+void printNthNodeLast (struct Node * head, int pos) {
     static bool reachedLast = false;
     static int posLast = 0;
     
@@ -16,7 +16,7 @@ void printNodeLast (struct Node * head, int pos) {
         return;
     }
     
-    printNodeLast (head->next, pos);
+    printNthNodeLast (head->next, pos);
 
     if(reachedLast && posLast == pos) {
         printf("Data of %d th element from last is : %d", pos, head->data);

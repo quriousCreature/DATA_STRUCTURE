@@ -1,0 +1,9 @@
+{
+    "files.autoSave": "onWindowChange",
+    "files.exclude": {
+        "**/*.dSYM": true
+    },
+    "files.associations": {
+        "CYCLE.C": "cpp"
+    }
+}

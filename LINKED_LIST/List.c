@@ -18,6 +18,8 @@ struct Node * createNode(int data) {
     return newNode;
 }
 
+
+
 // Print list
 void pList(struct Node * list) {
     printf("[");
@@ -204,7 +206,7 @@ void deleteListIterative (struct Node **ptr2head) {
 }
 
 // Nth node from last
-void printNodeLast (struct Node * head, int pos) {
+void printNthNodeLast (struct Node * head, int pos) {
     static bool reachedLast = false;
     static int posLast = 0;
     
@@ -213,7 +215,7 @@ void printNodeLast (struct Node * head, int pos) {
         return;
     }
     
-    printNodeLast (head->next, pos);
+    printNthNodeLast (head->next, pos);
 
     if(reachedLast ) {
         if(posLast == pos)
@@ -223,7 +225,17 @@ void printNodeLast (struct Node * head, int pos) {
     }
 }
 
-int main(void) {
+//Create a list of given length.
+struct Node *createList(int length)
+{
+    struct Node *head = createNode(100), *tail;
+    tail = head;
+    int counter = 100;
+    while (--length)
+        listAppend(&head, &tail, counter += 100);
+    return head;
+}
+/* int main(void) {
 
     struct Node *HEAD, *TAIL;
     TAIL=HEAD = createNode(100);
@@ -251,10 +263,10 @@ int main(void) {
     deleteNodePos(&HEAD, 4);
     // deleteListIterative(&HEAD);
     pList(HEAD);
-    printNodeLast(HEAD, 0);
+    printNthNodeLast(HEAD, 0);
     // printf("Tail is %d \n", (listFindTail(HEAD))->data);
 
     // listAppend(&Head, &tail, 555);
 
 
-}
+} */

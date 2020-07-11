@@ -21,6 +21,29 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "type": "shell",
+            "label": "C: clang generate assembly  active file",
+            "command": "/usr/bin/clang",
+            "args": [
+                "-S",
+                "${file}",
+                "-fverbose-asm",
+                "-Os",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.s"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
